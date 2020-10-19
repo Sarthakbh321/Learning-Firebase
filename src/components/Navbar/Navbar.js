@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SignedIn from "./SignedIn";
+import SignedOut from "./SignedOut";
 
 function Navbar() {
 	return (
@@ -8,6 +10,8 @@ function Navbar() {
 				<Link to="/">
 					WebSpace
 				</Link>
+				<SignedIn />
+				<SignedOut />
 			</div>
 		</nav>
 	)
