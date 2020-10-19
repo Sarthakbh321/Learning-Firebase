@@ -5,11 +5,11 @@ import Main from './pages/Main/Main';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Main} />
-      </Switch>
-    </Router>
+	<Router>
+		<Switch>
+		<Route exact path="/" component={Main} />
+	  </Switch>
+	</Router>
   );
 }
 
