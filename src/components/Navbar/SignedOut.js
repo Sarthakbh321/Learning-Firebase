@@ -6,7 +6,7 @@ function SignedOut() {
 		<div className="right">
 			<ul>
 				<li>
-					<NavLink to="/">Sign Up</NavLink>
+					<NavLink to="/signup">Sign Up</NavLink>
 				</li>
 				<li>
 					<NavLink to="/signin">Login</NavLink>

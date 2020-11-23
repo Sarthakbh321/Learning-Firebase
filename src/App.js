@@ -5,6 +5,7 @@ import Main from "./pages/Main/Main";
 import Navbar from "./components/Navbar/Navbar";
 import ProjectDetails from "./components/Projects/ProjectDetails";
 import Login from "./pages/Login/Login";
+import SignUp from "./pages/SignUp/SignUp";
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 			<Switch>
 				<Route exact path="/" component={Main} />
 				<Route exact path="/signin" component={Login} />
+				<Route exact path="/signup" component={SignUp} />
 				<Route exact path="/project/:id" component={ProjectDetails} />
 			</Switch>
 		</Router>
