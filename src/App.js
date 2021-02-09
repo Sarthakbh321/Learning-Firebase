@@ -6,11 +6,12 @@ import Navbar from "./components/Navbar/Navbar";
 import ProjectDetails from "./components/Projects/ProjectDetails";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import rootReducer from "./store/reducers/rootReducer";
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 function App() {
 	return (
