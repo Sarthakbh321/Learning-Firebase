@@ -10,6 +10,7 @@ import { applyMiddleware, createStore } from "redux";
 import rootReducer from "./store/reducers/rootReducer";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
+import CreateProject from "./pages/CreateProject/CreateProject";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
@@ -20,6 +21,7 @@ function App() {
 				<Navbar />
 				<Switch>
 					<Route exact path="/" component={Main} />
+					<Route exact path="/create" component={CreateProject} />
 					<Route exact path="/signin" component={Login} />
 					<Route exact path="/signup" component={SignUp} />
 					<Route
