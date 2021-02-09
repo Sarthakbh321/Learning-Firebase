@@ -1,17 +1,10 @@
-const initialState = {
-	isLoggedIn: false,
-};
+import { combineReducers } from "redux";
+import authReducer from "./authReducer";
+import projectReducer from "./projectReducer";
 
-const rootReducer = (state = initialState, action) => {
-	switch (action.type) {
-		case "LOGIN_TRUE":
-			return {
-				...state,
-				isLoggedIn: true,
-			};
-		default:
-			return state;
-	}
-};
+const rootReducer = combineReducers({
+	auth: authReducer,
+	project: projectReducer,
+});
 
 export default rootReducer;

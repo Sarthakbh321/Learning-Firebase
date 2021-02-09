@@ -5,7 +5,7 @@ import SignedIn from "./SignedIn";
 import SignedOut from "./SignedOut";
 
 function Navbar() {
-	const isLoggedIn = useSelector((state) => state.isLoggedIn);
+	const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
 	return (
 		<nav className="nav-wrapper grey darken-3">
