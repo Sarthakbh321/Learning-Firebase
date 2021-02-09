@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createProject } from "../../store/actions/projectActions";
 
 const CreateProject = () => {
 	const [details, setDetails] = useState({ title: "", content: "" });
+
+	const dispatch = useDispatch();
+
+	const projects = useSelector((state) => state.project.projects);
 
 	const handleChange = (e) => {
 		const { id, value } = e.target;
@@ -13,8 +19,12 @@ const CreateProject = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(details);
+		dispatch(createProject(details));
 	};
+
+	useEffect(() => {
+		console.log(projects);
+	}, [projects]);
 
 	return (
 		<div className="container">
