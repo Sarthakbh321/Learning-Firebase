@@ -1,8 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
 	const [details, setDetails] = useState({ email: "", password: "" });
+
+	const dispatch = useDispatch();
 
 	const handleChange = (event) => {
 		const n = { ...details };
@@ -33,7 +36,10 @@ const Login = () => {
 					/>
 				</div>
 				<div className="input-field">
-					<button className="btn pink lighten-1 z-depth-0">
+					<button
+						className="btn pink lighten-1 z-depth-0"
+						onClick={() => dispatch({ type: "LOGIN_TRUE" })}
+					>
 						Login
 					</button>
 				</div>
