@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/actions/authActions";
 
 const Login = () => {
 	const [details, setDetails] = useState({ email: "", password: "" });
+
+	const authError = useSelector((state) => state.auth.authError);
 
 	const dispatch = useDispatch();
 
@@ -39,11 +41,14 @@ const Login = () => {
 				<div className="input-field">
 					<button
 						className="btn pink lighten-1 z-depth-0"
-						onClick={() => dispatch(login())}
+						onClick={() =>
+							dispatch(login(details.email, details.password))
+						}
 					>
 						Login
 					</button>
 				</div>
+				{authError && <div className="red-text">{authError}</div>}
 			</form>
 		</div>
 	);

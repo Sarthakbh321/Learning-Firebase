@@ -3,6 +3,7 @@ import firebase from "../../utils/firebase";
 
 function ProjectDetails(props) {
 	const [project, setProject] = useState({});
+	const [loading, setLoading] = useState(true);
 	const id = props.match.params.id;
 
 	const getProject = async () => {
@@ -14,11 +15,16 @@ function ProjectDetails(props) {
 
 		console.log(getDoc.data());
 		setProject(getDoc.data());
+		setLoading(false);
 	};
 
 	useEffect(() => {
 		getProject();
 	}, []);
+
+	if (loading) {
+		return "Loading....";
+	}
 
 	return (
 		<div className="container section project-details">
